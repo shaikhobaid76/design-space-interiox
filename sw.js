@@ -1,4 +1,5 @@
-const CACHE_NAME = 'dsi-cache-v1';
+const CACHE_NAME = 'dsi-cache-v2';
+
 const urlsToCache = [
   '/',
   '/index.html',
@@ -12,30 +13,59 @@ const urlsToCache = [
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'
 ];
 
-self.addEventListener('install', event => {
+// INSTALL
+self.addEventListener('install', (event) => {
+  self.skipWaiting();
+
   event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(urlsToCache))
+    caches.open(CACHE_NAME).then((cache) => {
+      return cache.addAll(urlsToCache);
+    })
   );
 });
 
-self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => response || fetch(event.request))
-  );
-});
-
-self.addEventListener('activate', event => {
+// ACTIVATE
+self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys().then(cacheNames => {
+    caches.keys().then((cacheNames) => {
       return Promise.all(
-        cacheNames.map(cacheName => {
-          if (cacheName !== CACHE_NAME) {
-            return caches.delete(cacheName);
+        cacheNames.map((cache) => {
+          if (cache !== CACHE_NAME) {
+            return caches.delete(cache);
           }
         })
       );
+    })
+  );
+
+  return self.clients.claim();
+});
+
+// FETCH
+self.addEventListener('fetch', (event) => {
+  event.respondWith(
+    caches.match(event.request).then((response) => {
+
+      // cache mil gaya to wahi serve
+      if (response) {
+        return response;
+      }
+
+      // nahi mila to network se lao
+      return fetch(event.request)
+        .then((networkResponse) => {
+          return caches.open(CACHE_NAME).then((cache) => {
+
+            // new request cache me store
+            cache.put(event.request, networkResponse.clone());
+
+            return networkResponse;
+          });
+        })
+        .catch(() => {
+          return new Response("Offline");
+        });
+
     })
   );
 });
