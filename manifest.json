@@ -1,0 +1,23 @@
+{
+  "name": "Design Space Intriox",
+  "short_name": "DS Intriox",
+  "description": "Luxury interior designer creating bespoke spaces.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F7F4EC",
+  "theme_color": "#3D2C22",
+  "icons": [
+    {
+      "src": "assets/images/DSLOGO-192.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/DSLOGO-512.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}

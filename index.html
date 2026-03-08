@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Space Intriox | Luxury Interior Designer</title>
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#3D2C22">
+    <link rel="apple-touch-icon" href="assets/images/DSLOGO-192.jpg">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/DSLOGO.jpg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/DSLOGO.jpg">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/DSLOGO.jpg">
+    <link rel="icon" href="assets/images/DSLOGO.jpg">
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo-container">
+                <a href="#home" id="logo-link">
+                    <img src="assets/images/dslogo.png" class="logo" alt="Design Space Intriox Logo">
+                </a>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
+            <nav>
+                <!-- Logo inside sidebar for mobile -->
+                <div class="sidebar-logo">
+                    <img src="assets/images/dslogo.png" alt="Design Space Intriox Logo">
+                </div>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#why-choose-us">Why Choose Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" id="portfolio-link">Portfolio</a></li>
+                </ul>
+                <!-- Developer credit for mobile sidebar -->
+                <div class="mobile-dev-credit">
+                    <span>Developed by - OBAIDULLAH SHAIKH</span>
+                    <a href="https://obaidshaikh.vercel.app/" target="_blank" rel="noopener noreferrer" class="footer-link">
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Page -->
+    <div id="home-page">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <img src="assets/images/dslogo.png" alt="Design Space Intriox" class="hero-logo">
+                <h1>Make Your Home, More Beautiful</h1>
+                <p>Creating bespoke interior environments that reflect your personality and enhance your daily experience.</p>
+                <a href="#" class="btn" id="view-portfolio-hero">View My Portfolio</a>
+            </div>
+        </section>
+
+        <!-- About Preview with flip card -->
+        <section class="about-preview scroll-animate" id="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>About <span>DESIGN SPACE INTERIOX</span></h2>
+                        <p>With over a decade of experience in high-end residential and commercial interior design, I specialize in creating spaces that balance aesthetic beauty with functional practicality.</p>
+                        <p>My design philosophy centers on the belief that our environments profoundly impact our wellbeing. Each project begins with deep listening to understand your lifestyle, preferences, and aspirations.</p>
+                        <a href="https://wa.me/917506949793?text=Hi%20Hashim,%20I'm%20interested%20in%20your%20design%20services" class="btn" target="_blank">Get In Touch</a>
+                    </div>
+                    <div class="about-image flip-container" id="flipContainer">
+                        <div class="flipper" id="flipper">
+                            <!-- Front: company logo (with guaranteed fallback) -->
+                            <div class="front">
+                                <img src="assets/images/DSLOGO.jpg" alt="Design Space Intriox Logo" 
+                                     onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%25\' height=\'100%25\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%23807458\' /%3E%3Ctext x=\'50%25\' y=\'50%25\' font-size=\'20\' text-anchor=\'middle\' fill=\'%23FFFFFF\' dy=\'.3em\'%3EDS Logo%3C/text%3E%3C/svg%3E'">
+                            </div>
+                            <!-- Back: designer's photo (with guaranteed fallback) -->
+                            <div class="back">
+                                <img src="assets/images/designer.jpg" alt="Hashim Shaikh, Designer" 
+                                     onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%25\' height=\'100%25\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%239C816F\' /%3E%3Ctext x=\'50%25\' y=\'50%25\' font-size=\'20\' text-anchor=\'middle\' fill=\'%23FFFFFF\' dy=\'.3em\'%3EDesigner%3C/text%3E%3C/svg%3E'">
+                            </div>
+                        </div>
+                        <!-- Blinking hint (renamed to "Flip", auto-hides after 3s) -->
+                        <div class="flip-hint" id="flipHint">Flip Card</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects-section" id="projects">
+            <div class="container">
+                <div class="section-header scroll-animate">
+                    <h2>Projects</h2>
+                    <p>A selection of our latest interior transformations</p>
+                </div>
+                <div class="projects-grid" id="projects-grid">
+                    <!-- Projects will be dynamically added -->
+                </div>
+                <div class="view-portfolio-btn scroll-animate">
+                    <a href="#" class="btn btn-primary" id="view-portfolio-projects">View Full Portfolio</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Preview -->
+        <section class="services-preview" id="services">
+            <div class="container">
+                <div class="section-header scroll-animate">
+                    <h2>Design Services</h2>
+                    <p>Comprehensive interior design solutions tailored to your needs</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-item slide-left">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Residential Design">
+                        </div>
+                        <div class="service-text">
+                            <h3>Residential Design</h3>
+                            <p>Complete home transformations from concept to completion, creating spaces that reflect your personality and lifestyle with meticulous attention to detail.</p>
+                        </div>
+                    </div>
+                    <div class="service-item slide-right">
+                        <div class="service-image">
+                            <img src="assets/images/Commercial-Design.jpg" alt="Commercial Interiors">
+                        </div>
+                        <div class="service-text">
+                            <h3>Commercial Interiors</h3>
+                            <p>Workplace, retail, and hospitality designs that enhance brand identity and improve user experience through innovative spatial solutions.</p>
+                        </div>
+                    </div>
+                    <div class="service-item slide-left">
+                        <div class="service-image">
+                            <img src="assets/images/space planning.jpg" alt="Space Planning">
+                        </div>
+                        <div class="service-text">
+                            <h3>Space Planning</h3>
+                            <p>Optimizing layout and flow to maximize functionality while maintaining aesthetic appeal through strategic furniture placement and circulation patterns.</p>
+                        </div>
+                    </div>
+                    <div class="service-item slide-right">
+                        <div class="service-image">
+                            <img src="assets/images/3D Render image.jpeg" alt="3D Rendering">
+                        </div>
+                        <div class="service-text">
+                            <h3>3D Rendering</h3>
+                            <p>Photorealistic visualizations that bring your design concepts to life before implementation, allowing for precise planning and client approval.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="why-choose-us" id="why-choose-us">
+            <div class="container">
+                <div class="section-header scroll-animate">
+                    <h2>Why Choose Us</h2>
+                    <p>We provide complete design solutions from concept to construction</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-item slide-left">
+                        <div class="feature-image">
+                            <img src="assets/images/complete design solution.jpg" alt="Complete Design Solutions">
+                        </div>
+                        <div class="feature-text">
+                            <h3>Complete Design Solutions</h3>
+                            <p>We create comprehensive designs that include everything from initial concepts to detailed construction plans, ensuring a seamless process from start to finish.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item slide-right">
+                        <div class="feature-image">
+                            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="End-to-End Construction">
+                        </div>
+                        <div class="feature-text">
+                            <h3>End-to-End Construction</h3>
+                            <p>We don't just design - we oversee the entire construction process to ensure your vision becomes reality with quality craftsmanship and attention to detail.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item slide-left">
+                        <div class="feature-image">
+                            <img src="assets/images/2D 3D planning.jpeg" alt="2D & 3D Planning">
+                        </div>
+                        <div class="feature-text">
+                            <h3>2D & 3D Planning</h3>
+                            <p>We provide both 2D technical drawings and 3D visualizations so you can see your space before construction begins, ensuring perfect execution.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item slide-right">
+                        <div class="feature-image">
+                            <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Quality Assurance">
+                        </div>
+                        <div class="feature-text">
+                            <h3>Quality Assurance</h3>
+                            <p>We maintain the highest standards throughout the design and construction process to deliver exceptional results that exceed client expectations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section scroll-animate" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Contact Us</h2>
+                    <p>Get in touch to discuss your design project</p>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Let's Create Something Beautiful Together</h3>
+                        <p>Whether you're looking to transform your home or commercial space, we're here to bring your vision to life with our expertise and creative solutions.</p>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                                <div class="contact-details-text">
+                                    <h4>Phone</h4>
+                                    <a href="tel:7506949793">7506949793</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                                <div class="contact-details-text">
+                                    <h4>Email</h4>
+                                    <a href="mailto:skhashim6162@gmail.com">skhashim6162@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                                <div class="contact-details-text">
+                                    <h4>Address</h4>
+                                    <a href="https://www.google.com/maps/place/7JFJ3VCP%2BW75X/@19.072275,72.8844586,18z/am=t/data=!3m1!4b1!4m4!3m3!8m2!3d19.0722725!4d72.8857461?entry=ttu&g_ep=EgoyMDI5MTAwNC4wIKXMDSoASAFQAw%3D%3D" target="_blank">Kurla West, Mumbai-400070</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="social-media">
+                            <a href="https://www.instagram.com/design_space_interiox/?igsh=OGU0MmVlOWVjOQ%3D%3D#" class="social-icon" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://wa.me/917506949793?text=Hi%20Hashim,%20I'm%20interested%20in%20your%20design%20services" class="social-icon" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="#" class="social-icon" target="_blank" id="linkedin-link">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://www.facebook.com/people/design-space-interiox/61580822495089/?rdid=ZvAY4njcId09UxIJ&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18NoTji1X8%2F" class="social-icon" target="_blank">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.737319328898!2d72.8857461!3d19.0722725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c8f73fffffff%3A0x6f4f1b7e6f0c6b1a!2sKurla%20West%2C%20Mumbai%2C%20Maharashtra%20400070!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Portfolio Page -->
+    <div id="portfolio-page" class="portfolio-page">
+        <button class="back-button" id="back-to-home">← Back</button>
+        
+        <div class="portfolio-page-header">
+            <div class="container">
+                <h2>Portfolio</h2>
+                <p>Explore our complete collection of design projects</p>
+            </div>
+        </div>
+        
+        <div class="portfolio-page-categories">
+            <button class="category-btn active" data-category="all">All Projects</button>
+            <button class="category-btn" data-category="interior">Interior Design</button>
+            <button class="category-btn" data-category="exterior">Exterior Design</button>
+            <button class="category-btn" data-category="planning">Space Planning</button>
+            <button class="category-btn" data-category="autocad">AutoCAD</button>
+        </div>
+        
+        <div class="portfolio-page-grid" id="portfolio-page-grid">
+            <!-- Portfolio items dynamically added -->
+        </div>
+    </div>
+
+    <!-- Image Modal -->
+    <div class="image-modal" id="image-modal">
+        <div class="modal-content">
+            <button class="close-modal" id="close-modal">&times;</button>
+            <img id="modal-image" src="" alt="">
+        </div>
+    </div>
+
+    <!-- Footer (updated) -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>Developed by - OBAIDULLAH SHAIKH</p>
+            <a href="https://obaidshaikh.vercel.app/" target="_blank" rel="noopener noreferrer" class="footer-link">
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
